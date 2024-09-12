@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/projects_nav"
+    app:startDestination="@id/listProjectsFragment">
+
+    <fragment
+        android:id="@+id/listProjectsFragment"
+        android:name="com.example.technical_test_fq.view.projects.fragments.ListProjectsFragment"
+        android:label="fragment_list_projects"
+        tools:layout="@layout/fragment_list_projects" >
+        <action
+            android:id="@+id/action_listProjectsFragment_to_createProjectFragment"
+            app:destination="@id/createProjectFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_listProjectsFragment_to_graphProjectFragment"
+            app:destination="@id/graphProjectFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/createProjectFragment"
+        android:name="com.example.technical_test_fq.view.projects.fragments.CreateProjectFragment"
+        android:label="fragment_create_project"
+        tools:layout="@layout/fragment_create_project" >
+        <action
+            android:id="@+id/action_createProjectFragment_to_listProjectsFragment"
+            app:destination="@id/listProjectsFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/graphProjectFragment"
+        android:name="com.example.technical_test_fq.view.projects.fragments.GraphProjectFragment"
+        android:label="fragment_graph_project"
+        tools:layout="@layout/fragment_graph_project" >
+        <action
+            android:id="@+id/action_graphProjectFragment_to_listProjectsFragment"
+            app:destination="@id/listProjectsFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
